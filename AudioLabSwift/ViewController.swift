@@ -66,7 +66,7 @@ class ViewController: UIViewController {
     }
     
     // periodically, update the graph with refreshed FFT Data
-    func updateGraph(){
+    func updateGraph() {
         
         if let graph = self.graph{
             graph.updateGraph(
