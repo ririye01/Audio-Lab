@@ -13,6 +13,6 @@ let windowSize = fftData.count / 20
 ```
 This line determines our bucket sizes, and we do not hard-code any buffer size. However, if we were to change the magnitude array size from 20 to another size, we would have issues because we hard coded it to 20 buckets. The only change necessary would be to change the math to use fft magnitude array's size.
 
-3. Is pausing the audioManager object better than deallocating it when the view has disappeared (explain your reasoning)?
+2. Is pausing the audioManager object better than deallocating it when the view has disappeared (explain your reasoning)?
 
    Pausing is better than deallocating because that way we can save our place in the audio file and keep all of the data withing the buffers. Plus, it doesn't make sense to deallocate it every time the view disappears when a user has the ability to toggle in and out of the view freely.
