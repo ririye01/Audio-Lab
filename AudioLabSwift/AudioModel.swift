@@ -32,7 +32,9 @@ class AudioModel {
     func startMicrophoneProcessing(withFps:Double){
         // setup the microphone to copy to circualr buffer
         if let manager = self.audioManager{
+            self.audioManager?.outputBlock = nil
             manager.inputBlock = self.handleMicrophone
+            
             
             // repeat this fps times per second using the timer class
             //   every time this is called, we update the arrays "timeData" and "fftData"
@@ -40,6 +42,26 @@ class AudioModel {
                 self.runEveryInterval()
             }
             
+        }
+    }
+    
+    func startProcesingAudioFileForPlayback(){
+        self.audioManager?.outputBlock = self.handleSpeakerQueryWithAudioFile
+        self.fileReader?.play()
+    }
+    
+    
+    private func handleSpeakerQueryWithAudioFile(data:Optional<UnsafeMutablePointer<Float>>, numFrames:UInt32, numChannels: UInt32){
+        if let file = self.fileReader{
+            
+            // read from file, loaidng into data (a float pointer)
+            file.retrieveFreshAudio(data,
+                                    numFrames: numFrames,
+                                    numChannels: numChannels)
+            
+            // set samples to output speaker buffer
+            self.outputBuffer?.addNewFloatData(data,
+                                         withNumSamples: Int64(numFrames))
         }
     }
     
@@ -89,10 +111,28 @@ class AudioModel {
                                    andBufferSize: Int64(BUFFER_SIZE))
     }()
     
+    private lazy var outputBuffer:CircularBuffer? = {
+        return CircularBuffer.init(numChannels: Int64(self.audioManager!.numOutputChannels),
+                                   andBufferSize: Int64(BUFFER_SIZE))
+    }()
     
     //==========================================
     // MARK: Private Methods
-    // NONE for this model
+    private lazy var fileReader:AudioFileReader? = {
+        
+        if let url = Bundle.main.url(forResource: "satisfaction", withExtension: "mp3"){
+            var tmpFileReader:AudioFileReader? = AudioFileReader.init(audioFileURL: url,
+                                                   samplingRate: Float(audioManager!.samplingRate),
+                                                   numChannels: audioManager!.numOutputChannels)
+            
+            tmpFileReader!.currentTime = 0.0
+            print("Audio file succesfully loaded for \(url)")
+            return tmpFileReader
+        }else{
+            print("Could not initialize audio input file")
+            return nil
+        }
+    }()
     
     //==========================================
     // MARK: Model Callback Methods

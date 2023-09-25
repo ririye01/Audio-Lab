@@ -1,8 +1,14 @@
+//
+//  Part3ViewController.swift
+//  AudioLabSwift
+//
+//  Created by Chris Miller on 9/25/23.
+//  Copyright © 2023 Eric Larson. All rights reserved.
+//
+
 import UIKit
-import Metal
 
-class ViewController: UIViewController {
-
+class Part3ViewController: UIViewController {
     @IBOutlet weak var userView: UIView!
     struct AudioConstants{
         static let AUDIO_BUFFER_SIZE = 1024*4
@@ -41,7 +47,8 @@ class ViewController: UIViewController {
         
         // start up the audio model here, querying microphone
         audio.startMicrophoneProcessing(withFps: 20) // preferred number of FFT calculations per second
-
+        
+        audio.startProcesingAudioFileForPlayback()
         audio.play()
         
         // run the loop for updating the graph peridocially
