@@ -87,7 +87,12 @@ class AudioModel {
             let startIdx = i * windowSize  // Starting index
             
             // Note: vDSP_maxv used pass by reference to adjust maximum value in the given Float array
-            vDSP_maxv(&fftData + startIdx, 1, &maxDataSize20 + i,  vDSP_Length(windowSize))
+            vDSP_maxv(
+                &fftData + startIdx, // Starting point in memory to reference
+                1, // Stride
+                &maxDataSize20 + i, // The point in memory to modify by inputting the max
+                vDSP_Length(windowSize) // The length of the area to analyze after `&fftData + startIdx`
+            )
         }
     }
     
