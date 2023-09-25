@@ -86,7 +86,7 @@ class AudioModel {
         for i in 0..<maxDataSize20.count {
             let startIdx = i * windowSize  // Starting index
             
-            // Note: vDSP_maxv returns the maximum value in the given Float array
+            // Note: vDSP_maxv used pass by reference to adjust maximum value in the given Float array
             vDSP_maxv(&fftData + startIdx, 1, &maxDataSize20 + i,  vDSP_Length(windowSize))
         }
     }
