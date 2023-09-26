@@ -45,9 +45,7 @@ class Part3ViewController: UIViewController {
             graph.makeGrids() // add grids to graph
         }
         
-        // start up the audio model here, querying microphone
-        audio.startMicrophoneProcessing(withFps: 20) // preferred number of FFT calculations per second
-        
+        // Begin Audio
         audio.startProcesingAudioFileForPlayback()
         audio.play()
         
