@@ -37,7 +37,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="BYZ-38-t0r" kind="show" id="rBR-tV-ryw"/>
+                                            <segue destination="emK-Jh-f7z" kind="show" id="TZf-9G-3kK"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="XwP-mu-jbd" style="IBUITableViewCellStyleDefault" id="98g-gc-L4D">
@@ -74,52 +74,6 @@
             </objects>
             <point key="canvasLocation" x="-49" y="50"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
-            <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="AudioLabSwift" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YB8-JK-DSb">
-                                <rect key="frame" x="20" y="92" width="374" height="405"/>
-                                <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="405" id="gzF-q7-3S9"/>
-                                </constraints>
-                            </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j2d-ef-Pho">
-                                <rect key="frame" x="20" y="505" width="374" height="146"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="146" id="T3n-o9-0M8"/>
-                                </constraints>
-                                <string key="text">The view above is used as a placholder for the metal graph class to display into. It allows you to manipualte position and size of the graph locations.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="YB8-JK-DSb" secondAttribute="trailing" constant="20" id="07I-rt-aUI"/>
-                            <constraint firstItem="j2d-ef-Pho" firstAttribute="top" secondItem="YB8-JK-DSb" secondAttribute="bottom" constant="8" symbolic="YES" id="4wO-Dq-EiC"/>
-                            <constraint firstItem="YB8-JK-DSb" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="CG7-N7-eeg"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="j2d-ef-Pho" secondAttribute="trailing" constant="20" id="R5b-5d-esr"/>
-                            <constraint firstItem="YB8-JK-DSb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="ksd-gZ-nu1"/>
-                            <constraint firstItem="j2d-ef-Pho" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="nzJ-WD-5Yk"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="hPV-Xo-Tx6"/>
-                    <connections>
-                        <outlet property="userView" destination="YB8-JK-DSb" id="jNT-uO-aS3"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1048" y="-252"/>
-        </scene>
         <!--Navigation Controller-->
         <scene sceneID="OPV-Z6-Z2d">
             <objects>
@@ -147,32 +101,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ae4-ut-M9n">
-                                <rect key="frame" x="20" y="92" width="374" height="405"/>
+                                <rect key="frame" x="20" y="101.5" width="374" height="751"/>
                                 <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="405" id="KrV-ED-ynM"/>
+                                    <constraint firstAttribute="width" constant="374" id="Sdm-Cg-mow"/>
+                                    <constraint firstAttribute="height" constant="751" id="aCh-M4-C6F"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gub-vM-8wJ">
-                                <rect key="frame" x="20" y="505" width="374" height="146"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="146" id="b3y-6i-HYA"/>
-                                </constraints>
-                                <string key="text">The view above is used as a placholder for the metal graph class to display into. It allows you to manipualte position and size of the graph locations.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="0dh-no-d2K"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="labelColor"/>
                         <constraints>
-                            <constraint firstItem="gub-vM-8wJ" firstAttribute="top" secondItem="ae4-ut-M9n" secondAttribute="bottom" constant="8" symbolic="YES" id="8VR-aD-nKO"/>
-                            <constraint firstItem="ae4-ut-M9n" firstAttribute="top" secondItem="0dh-no-d2K" secondAttribute="top" id="LXa-dV-oes"/>
-                            <constraint firstItem="0dh-no-d2K" firstAttribute="trailing" secondItem="gub-vM-8wJ" secondAttribute="trailing" constant="20" id="hvV-Yo-uUN"/>
-                            <constraint firstItem="0dh-no-d2K" firstAttribute="trailing" secondItem="ae4-ut-M9n" secondAttribute="trailing" constant="20" id="mlk-N9-5Kw"/>
-                            <constraint firstItem="ae4-ut-M9n" firstAttribute="leading" secondItem="0dh-no-d2K" secondAttribute="leading" constant="20" id="xmz-Ze-zyT"/>
-                            <constraint firstItem="gub-vM-8wJ" firstAttribute="leading" secondItem="0dh-no-d2K" secondAttribute="leading" constant="20" id="ywb-AX-10o"/>
+                            <constraint firstItem="ae4-ut-M9n" firstAttribute="centerY" secondItem="0dh-no-d2K" secondAttribute="centerY" id="K8W-Hs-fyJ"/>
+                            <constraint firstItem="ae4-ut-M9n" firstAttribute="centerX" secondItem="0dh-no-d2K" secondAttribute="centerX" id="Yk8-ny-Uyn"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="w4f-48-CPa"/>
@@ -182,10 +123,46 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CMA-fg-aUB" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1048" y="391"/>
+            <point key="canvasLocation" x="1047.8260869565217" y="390.40178571428572"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="fsu-Se-Vku">
+            <objects>
+                <viewController id="emK-Jh-f7z" customClass="ViewController" customModule="AudioLabSwift" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="JJX-P5-55m">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OWy-g2-tIN">
+                                <rect key="frame" x="20" y="101.5" width="374" height="751"/>
+                                <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="751" id="2HO-hh-ujE"/>
+                                    <constraint firstAttribute="width" constant="374" id="QGt-xd-PZS"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="CM5-gf-aWz"/>
+                        <color key="backgroundColor" systemColor="labelColor"/>
+                        <constraints>
+                            <constraint firstItem="OWy-g2-tIN" firstAttribute="centerX" secondItem="CM5-gf-aWz" secondAttribute="centerX" id="GjL-b7-yxM"/>
+                            <constraint firstItem="OWy-g2-tIN" firstAttribute="centerY" secondItem="CM5-gf-aWz" secondAttribute="centerY" id="ki9-AQ-uDP"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="zHN-Rv-S35"/>
+                    <connections>
+                        <outlet property="userView" destination="OWy-g2-tIN" id="l30-U3-osb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="W6U-Zd-uiB" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1048" y="-279"/>
         </scene>
     </scenes>
     <resources>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="opaqueSeparatorColor">
             <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
