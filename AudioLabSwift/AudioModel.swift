@@ -70,19 +70,19 @@ class AudioModel {
     
     func updateMaxFrequencyAmplitude() {
         // Window size for each slice of the FFT array
-        let windowSize = fftData.count / 20
-        
-        // Each `i` represents an index of the maxDataSize20 array
-        for i in 0..<20 {
+        let windowSize = fftData.count / maxDataSize20.count
+
+        // Use vDSP_maxv to get the maximum value for each window
+        for i in 0..<maxDataSize20.count {
             let startIdx = i * windowSize  // Starting index
-            let endIdx = min(startIdx + windowSize, fftData.count)  // Ending index
-            let window = fftData[startIdx..<endIdx]  // Indexing to catch subset
-            if let maxValue = window.max() {
-                maxDataSize20[i] = maxValue
-            } else {
-                // Handle error or edge case when window is empty
-                print("Error: Window is empty or some unexpected error occurred.")
-            }
+            
+            // Note: vDSP_maxv used pass by reference to adjust maximum value in the given Float array
+            vDSP_maxv(
+                &fftData + startIdx, // Starting point in memory to reference
+                1, // Stride
+                &maxDataSize20 + i, // The point in memory to modify by inputting the max
+                vDSP_Length(windowSize) // The length of the area to analyze after `&fftData + startIdx`
+            )
         }
     }
     
