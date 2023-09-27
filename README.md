@@ -19,6 +19,6 @@ for i in 0..<maxDataSize20.count {
 ```
 These lines determine our bucket sizes, and we do not hard-code any buffer size. If we were to change the magnitude array size from 20 to another size, the `windowSize` value change would account for the change in size of the magnitude array, and the loop would iterate through however many times is needed.
 
-2. Is pausing the audioManager object better than deallocating it when the view has disappeared (explain your reasoning)?
+2. Is pausing the `audioManager` object better than deallocating it when the view has disappeared (explain your reasoning)?
 
-   Pausing is better than deallocating because that way we can save our place in the audio file and keep all of the data withing the buffers. Plus, it doesn't make sense to deallocate it every time the view disappears when a user has the ability to toggle in and out of the view freely.
+Pausing the `audioManager` object is generally more favorable than deallocating it when the view disappears. If the user returns to the view, the program would need to reallocate and reinitialize the Novocaine audio resources, leading to a slight potential performance overhead and a possible delay in resuming playback. 
