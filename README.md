@@ -1,4 +1,4 @@
-# Audio-Lab
+# Audio In-Class Assignment
 CS 5323: Mobile Apps Sensing &amp; Learning In-Class Assignment 2
 
 Created by: Reece Iriye, Chris Miller, Rafe Forward, Ethan Haugen
