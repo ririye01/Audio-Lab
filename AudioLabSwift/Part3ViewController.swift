@@ -40,8 +40,8 @@ class Part3ViewController: UIViewController {
             // Creating a third graph for viewing 20 points long
             graph.addGraph(withName: "bufferSize20Graph",
                            shouldNormalizeForFFT: true,
-                           numPointsInGraph: 20)
-            
+                           numPointsInGraph: audio.maxDataSize20.count)
+
             graph.makeGrids() // add grids to graph
         }
         
@@ -71,7 +71,7 @@ class Part3ViewController: UIViewController {
     }
     
     // periodically, update the graph with refreshed FFT Data
-    func updateGraph(){
+    func updateGraph() {
         
         if let graph = self.graph{
             graph.updateGraph(

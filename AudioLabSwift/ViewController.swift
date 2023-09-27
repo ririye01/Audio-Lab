@@ -34,7 +34,7 @@ class ViewController: UIViewController {
             // Creating a third graph for viewing 20 points long
             graph.addGraph(withName: "bufferSize20Graph",
                            shouldNormalizeForFFT: true,
-                           numPointsInGraph: 20)
+                           numPointsInGraph: audio.maxDataSize20.count)
             
             graph.makeGrids() // add grids to graph
         }
