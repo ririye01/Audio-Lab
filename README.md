@@ -21,4 +21,4 @@ These lines determine our bucket sizes, and we do not hard-code any buffer size.
 
 2. Is pausing the `audioManager` object better than deallocating it when the view has disappeared (explain your reasoning)?
 
-Pausing the `audioManager` object is generally more favorable than deallocating it when the view disappears. If the user returns to the view, the program would need to reallocate and reinitialize the Novocaine audio resources, leading to a slight potential performance overhead and a possible delay in resuming playback. 
+Pausing the `audioManager` object is generally more favorable than deallocating it when the view disappears. If the user returns to the view, the program would need to reallocate and reinitialize the Novocaine audio resources every single time, leading to a slight potential performance overhead and a possible delay in resuming playback. Especially if the user is repetitvely switching between views, this can be costly when done on repeat. 
